@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--Basic.html은 매개변수를 받고있다. 이파일에서 호출할때 매개변수를 던져주면 Basic.html애서 매개변수를 받아서 해당변수를 다 수정된다음에
+ 다시 여기로 html을 가져와서 화면에 뿌려준다. 컴포넌트랑 비슷한 개념이다.
+ -->
+<th:block th:replace="~{/layout/basic :: setContent(~{this::content})}">
+  <th:block th:fragment="content">
+      <h1>GuestBook List Page</h1>
+  </th:block>
+</th:block>
+
+</html>
