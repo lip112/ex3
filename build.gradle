@@ -40,7 +40,7 @@ tasks.named('test') {
 // 추가 querydsl
 def querydslDir = "$buildDir/generated/querydsl"
 
-querydslDir {
+querydsl {
     jpa = true
     querydslSourcesDir = querydslDir
 }
@@ -49,10 +49,10 @@ sourceSets{
     main.java.srcDir querydslDir
 }
 
-configurations {
-    querydsl.extendsForm complieClasspath
+compileQuerydsl{
+    options.annotationProcessorPath = configurations.querydsl
 }
 
-complieQuerydsl{
-    options.annotationProcessorPath = configurations.querydsl
+configurations {
+    querydsl.extendsFrom compileClasspath
 }
