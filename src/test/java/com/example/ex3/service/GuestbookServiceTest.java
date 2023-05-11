@@ -33,23 +33,6 @@ public class GuestbookServiceTest {
     }
 
     @Test
-    public void testBB(){
-        PageRequestDTO pageRequestDTO = PageRequestDTO.builder()
-                .size(1)
-                .page(10)
-                .build();
-
-        Pageable pageable = pageRequestDTO.getPageable(Sort.by("gno").descending());
-        Page<Guestbook> reuslt = repository.findAll(pageable);
-
-        System.out.println(reuslt);
-    }
-    @Test
-    public void math(){
-        int temp = (int)(Math.ceil(11 / 10.0)) * 10;
-        System.out.println("temp = " + temp);
-    }
-    @Test
     public void testList() {
         PageRequestDTO pageRequestDTO = PageRequestDTO.builder()
                 .page(1)
