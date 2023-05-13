@@ -27,6 +27,8 @@ public class PageResultDTO<DTO, EN> {
 
     public PageResultDTO(Page<EN> result, Function<EN, DTO> fn) {
         dtoList = result.stream().map(fn).collect(Collectors.toList());
+        //Stream은 배열이나 리스트 등의 데이터 소스를 바탕으로 생성할 수 있으며, 여러 개의 중간 연산과 한 개의 최종 연산으로 구성됩니다.
+        // 중간 연산은 스트림을 반환하여 연속된 처리를 가능하게 하며, 최종 연산은 스트림을 처리하여 결과를 반환합니다.
         //    Filter: 주어진 조건에 맞는 요소만 걸러내는 기능입니다.
         //    Map: 요소를 다른 요소로 변환하는 기능입니다.
         //    Reduce: 요소들을 결합하여 하나의 값을 도출하는 기능입니다.
