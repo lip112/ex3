@@ -92,13 +92,13 @@ public class GuestbookServiceImpl implements GuestbookService{
         BooleanBuilder conditionBuilder = new BooleanBuilder();
 
         if (type.contains("t")) {
-            conditionBuilder.or(qGuestbook.title.contains(type));
+            conditionBuilder.or(qGuestbook.title.contains(keyword));
         }
         if (type.contains("c")) {
-            conditionBuilder.or(qGuestbook.content.contains(type));
+            conditionBuilder.or(qGuestbook.content.contains(keyword));
         }
         if (type.contains("w")) {
-            conditionBuilder.or(qGuestbook.writer.contains(type));
+            conditionBuilder.or(qGuestbook.writer.contains(keyword));
         }
         //모든 조건 통합
         booleanBuilder.and(conditionBuilder);
